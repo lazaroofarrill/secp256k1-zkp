@@ -1,0 +1,11 @@
+.{
+    .name = .secp256k1_zkp,
+    .fingerprint = 0x63eb42d9f3522acc,
+    .version = "0.1.0",
+    .paths = .{
+        "",
+    },
+    .dependencies = .{
+        .android_ndk = .{ .path = "../../pkg/android-ndk" },
+    },
+}

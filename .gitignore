@@ -60,7 +60,7 @@ contrib/gh-pr-create.sh
 # CMake build directories.
 /*build*
 
-!/build.zig
+!/build.zig*
 
 ### Python
 __pycache__/

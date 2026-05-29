@@ -1,6 +1,6 @@
 const std = @import("std");
 
-pub fn build(b: *std.Build) void {
+pub fn build(b: *std.Build) !void {
     const target = b.standardTargetOptions(.{});
     const optimize = b.standardOptimizeOption(.{});
 
@@ -56,6 +56,14 @@ pub fn build(b: *std.Build) void {
             .link_libc = true,
         }),
     });
+
+    if (target.result.abi.isAndroid()) {
+        lib.link_z_max_page_size = 16384; // 16kb
+
+        const android_ndk = @import("android_ndk");
+
+        try android_ndk.addPaths(b, lib, &b.graph.environ_map);
+    }
 
     lib.root_module.addIncludePath(b.path("."));
     lib.root_module.addIncludePath(b.path("include"));
