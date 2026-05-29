@@ -65,3 +65,4 @@ contrib/gh-pr-create.sh
 ### Python
 __pycache__/
 *.py[oc]
+.zig-cache/
