@@ -66,3 +66,4 @@ contrib/gh-pr-create.sh
 __pycache__/
 *.py[oc]
 .zig-cache/
+zig-out/
