@@ -65,6 +65,12 @@ pub fn build(b: *std.Build) !void {
         try android_ndk.addPaths(b, lib);
     }
 
+    if (target.result.os.tag == .ios) {
+        const apple_sdk = @import("apple_sdk");
+
+        try apple_sdk.addPaths(b, lib);
+    }
+
     lib.root_module.addIncludePath(b.path("."));
     lib.root_module.addIncludePath(b.path("include"));
     lib.root_module.addIncludePath(b.path("src"));

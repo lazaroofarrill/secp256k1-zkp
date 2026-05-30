@@ -7,5 +7,6 @@
     },
     .dependencies = .{
         .android_ndk = .{ .path = "../../pkg/android-ndk" },
+        .apple_sdk = .{ .path = "../../pkg/apple-sdk" },
     },
 }
