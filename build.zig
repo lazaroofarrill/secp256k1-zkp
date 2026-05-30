@@ -62,7 +62,7 @@ pub fn build(b: *std.Build) !void {
 
         const android_ndk = @import("android_ndk");
 
-        try android_ndk.addPaths(b, lib, &b.graph.environ_map);
+        try android_ndk.addPaths(b, lib);
     }
 
     lib.root_module.addIncludePath(b.path("."));
