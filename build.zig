@@ -84,6 +84,7 @@ pub fn build(b: *std.Build) !void {
         "-Wshadow",
         "-Wstrict-prototypes",
         "-Wundef",
+        "-fPIC",
     };
 
     for (&[_][]const u8{
