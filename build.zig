@@ -4,6 +4,8 @@ pub fn build(b: *std.Build) !void {
     const target = b.standardTargetOptions(.{});
     const optimize = b.standardOptimizeOption(.{});
 
+    _ = optimize;
+
     // Modules
     const enable_ecdh = b.option(bool, "enable-ecdh", "Enable ECDH module.") orelse true;
     const enable_recovery = b.option(bool, "enable-recovery", "Enable ECDSA pubkey recovery module.") orelse false;
@@ -52,7 +54,7 @@ pub fn build(b: *std.Build) !void {
         .name = "secp256k1",
         .root_module = b.createModule(.{
             .target = target,
-            .optimize = optimize,
+            .optimize = .ReleaseFast,
             .link_libc = true,
         }),
     });
