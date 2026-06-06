@@ -137,11 +137,11 @@ pub fn build(b: *std.Build) !void {
     if (cpu_arch == .x86_64) {
         lib.root_module.addCMacro("USE_ASM_X86_64", "1");
     } else if (cpu_arch == .arm or cpu_arch == .armeb or cpu_arch == .thumb) {
-        lib.root_module.addCMacro("USE_EXTERNAL_ASM", "1");
-        lib.root_module.addCSourceFile(.{
-            .file = b.path("src/asm/field_10x26_arm.s"),
-            .flags = &[_][]const u8{},
-        });
+        // lib.root_module.addCMacro("USE_EXTERNAL_ASM", "1");
+        // lib.root_module.addCSourceFile(.{
+        //     .file = b.path("src/asm/field_10x26_arm.s"),
+        //     .flags = &[_][]const u8{},
+        // });
     }
 
     lib.installHeader(b.path("include/secp256k1.h"), "secp256k1.h");
